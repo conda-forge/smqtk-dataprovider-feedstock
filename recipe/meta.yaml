@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/smqtk_dataprovider-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/smqtk_dataprovider-{{ version }}.tar.gz
   sha256: 66ccd5d6b0d5e8fe77f714e597a0b7f8eb288089b9b7251a27f1c76869b530aa
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8,<4.0
+    - python {{ python_min }}
     - pip
     - poetry-core
   run:
-    - python >=3.8,<4.0
+    - python >={{ python_min }},<4.0
     - numpy >=1.23.5
     - requests >=2.28.1
     - smqtk-core >=0.19
@@ -32,6 +32,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/Kitware/SMQTK-Dataprovider
