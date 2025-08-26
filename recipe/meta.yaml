@@ -1,5 +1,5 @@
 {% set name = "smqtk-dataprovider" %}
-{% set version = "0.18.0" %}
+{% set version = "0.19.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/smqtk_dataprovider-{{ version }}.tar.gz
-  sha256: 66ccd5d6b0d5e8fe77f714e597a0b7f8eb288089b9b7251a27f1c76869b530aa
+  sha256: 5b509990501666755ae95d75e84d7f8fd41d92f8052431a84a7ffde78489b59d
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
