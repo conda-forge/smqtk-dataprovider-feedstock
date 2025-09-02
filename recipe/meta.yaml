@@ -10,20 +10,21 @@ source:
   sha256: 5b509990501666755ae95d75e84d7f8fd41d92f8052431a84a7ffde78489b59d
 
 build:
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - pip
     - poetry-core
   run:
-    - python >={{ python_min }},<4.0
-    - numpy >=1.23.5
+    - python
+    - numpy >=1.23.5,<2.0  # [py<=312]
+    - numpy >=2.1  # [py>312]
     - requests >=2.28.1
-    - smqtk-core >=0.19
+    - smqtk-core >=0.20
+    - psycopg2-binary >=2.9.10
 
 test:
   imports:
