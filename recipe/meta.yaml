@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/smqtk_dataprovider-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/smqtk_dataprovider-{{ version }}.tar.gz
   sha256: 5b509990501666755ae95d75e84d7f8fd41d92f8052431a84a7ffde78489b59d
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 3
 
 requirements:
   host:
