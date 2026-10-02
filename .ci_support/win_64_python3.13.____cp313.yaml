@@ -9,11 +9,9 @@ pin_run_as_build:
 python:
 - 3.13.* *_cp313
 python_min:
-- '3.10'
+- '3.11'
 target_platform:
 - win-64
-tk:
-- '8.6'
 zip_keys:
 - - python
   - channel_sources
