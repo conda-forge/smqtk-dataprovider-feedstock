@@ -20,11 +20,11 @@ requirements:
     - poetry-core
   run:
     - python
-    - numpy >=1.23.5,<2.0  # [py<=312]
-    - numpy >=2.1  # [py>312]
-    - requests >=2.28.1
-    - smqtk-core >=0.20
-    - psycopg2-binary >=2.9.10
+    - numpy >=1.23.5  # [py<313]
+    - numpy >=2.1  # [py>=313]
+    - requests >=2.33.0
+    - smqtk-core >=0.22
+    - psycopg2-binary >=2.9.11
 
 test:
   imports:
